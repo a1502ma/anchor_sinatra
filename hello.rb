@@ -2,7 +2,8 @@ require 'sinatra'
 require 'date'
 
 get '/' do
-  "Hello AIIT!"
+  "Hello AIIT!<br>" +
+  "<a href='win_a_car'>Win a Car</a>"
 end
 
 day = Date.today
@@ -11,10 +12,17 @@ p day.to_s
 # win a car 
 set(:probability) { |value| condition { rand <= value } }
 get '/win_a_car', :probability => 0.3 do
-  "win!!"
+  "win!!<br>" +
+  "<input type='button' value='もう一回！' onclick='location.reload();' /><br>" +
+  "<a href='..'>戻る</a>"
 end
 
 get '/win_a_car' do
-  "loose!"
+  "loose!<br>" +
+  "<input type='button' value='もう一回！' onclick='location.reload();' /><br>" +
+  "<a href='..'>戻る</a>"
 end
 
+get '/hello/:name' do
+  "Hello #{params['name']}!"
+end
