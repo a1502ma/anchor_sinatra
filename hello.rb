@@ -16,3 +16,7 @@ get '/win_a_car' do
   "loose!<br>" +
   "<a href='..'>Back</a>"
 end
+
+get '/hello/:name' do
+  "Hello #{params['name']}!"
+end
