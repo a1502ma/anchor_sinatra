@@ -18,3 +18,7 @@ get '/win_a_car' do
   "<input type='button' value='もう一回！' onclick='location.reload();' /><br>" +
   "<a href='..'>戻る</a>"
 end
+
+get '/hello/:name' do
+  "Hello #{params['name']}!"
+end
