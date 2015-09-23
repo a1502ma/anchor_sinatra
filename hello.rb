@@ -1,8 +1,12 @@
 require 'sinatra'
+require 'date'
 
 get '/' do
   "Hello AIIT!"
 end
+
+day = Date.today
+p day.to_s
 
 # win a car 
 set(:probability) { |value| condition { rand <= value } }
