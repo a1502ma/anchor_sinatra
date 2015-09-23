@@ -9,10 +9,12 @@ end
 set(:probability) { |value| condition { rand <= value } }
 get '/win_a_car', :probability => 0.3 do
   "win!!<br>" +
+  "<input type="button" value="もう一回！" onclick="location.reload();" /><br>" +
   "<a href='..'>Back</a>"
 end
 
 get '/win_a_car' do
   "loose!<br>" +
-  "<a href='..'>Back</a>"
+  "<input type="button" value="もう一回！" onclick="location.reload();" /><br>" +
+  "<a href='..'>戻る</a>"
 end
